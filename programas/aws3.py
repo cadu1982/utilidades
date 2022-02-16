@@ -1,6 +1,5 @@
 import boto3
 
-
 def has_dns_tag(tags):
     for tag in tags['Tags']:
         if tag['Key'] == "DNS_NAME":
