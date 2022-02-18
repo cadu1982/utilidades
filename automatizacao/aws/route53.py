@@ -1,6 +1,8 @@
 import boto3
 
-def insert(ip):
+
+def insert(name, ip):
+    print("Tentando criar {} - {}".format(name, ip))
     boto3.setup_default_session(profile_name='ragazzi')
     client = boto3.client('route53')
     cria = client.change_resource_record_sets(
@@ -9,7 +11,7 @@ def insert(ip):
                 {
                     'Action': 'CREATE',
                     'ResourceRecordSet': {
-                        'Name': 'myfisrtzone.com.',
+                        'Name': name,
                         'ResourceRecords': [
                             {
                                 'Value': ip,
@@ -20,18 +22,17 @@ def insert(ip):
                     },
                 },
             ],
-            'Comment': 'Web server for myfisrtzone',
         },
-        HostedZoneId='Z07613381BFGTQENZMGEW',   
+        HostedZoneId='Z043404112J4ILIAMZASV',
     )
-    # print(cria)
     return cria
 
 
 def delete(name, ip):
+    print("Tentando deletar {} - {}".format(name, ip))
     boto3.setup_default_session(profile_name='ragazzi')
     client = boto3.client('route53')
-    apaga = client.change_resource_record_sets(
+    response = client.change_resource_record_sets(
         ChangeBatch={
             'Changes': [
                 {
@@ -48,9 +49,7 @@ def delete(name, ip):
                     },
                 },
             ],
-            'Comment': 'Web server for myfisrtzone',
         },
-        HostedZoneId='Z07613381BFGTQENZMGEW',
+        HostedZoneId='Z043404112J4ILIAMZASV',
     )
-    # print(apaga)
-    return apaga
+    return response

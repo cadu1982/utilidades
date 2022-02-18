@@ -1,5 +1,5 @@
 import boto3
-def get_ip(id):
+def get_ip(instance_id):
     boto3.setup_default_session(profile_name='ragazzi')
     ec2 = boto3.client('ec2', region_name='us-east-1')
     ip = ec2.describe_addresses(
@@ -7,10 +7,10 @@ def get_ip(id):
                 {
                     'Name': 'instance-id',
                     'Values': [
-                       id,
+                        instance_id,
                     ],
                 },
             ],
     )
-    # print(ip['Addresses'][0]['PublicIp'])
+    ip = (ip['Addresses'][0]['PublicIp'])
     return ip
