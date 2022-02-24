@@ -1,5 +1,3 @@
-import json
-
 data = [
         {
             'marca': 'fiat',
@@ -63,6 +61,8 @@ data = [
         }
     ]
 
+print(data[0], data[1])
+datq = data.update()
 
 
 
@@ -95,21 +95,42 @@ print(quant_itens(data))
 def veiculo_caro(carro):
     valor = "preco"
     valores = [vl[valor] for vl in carro]
-    resultado = valores.split(",")
-    maximo = (max(int(maior) for maior in resultado))
+    maior = valores
+    max_valor = max(maior)
+    return max_valor
 
 print(veiculo_caro(data))
 
-#     caro = 0
-#     valor = (carro[0]["preco"])
-#     for valor in carro:
-#         valor > caro
-#         caro = valor
-#         return caro
+# 3. Veículo Mais barato
+
+# def veiculo_barato(carro):
+#     valor = "preco"
+#     valores = [vl[valor] for vl in carro]
+#     maior = valores
+#     max_valor = max(maior)
+#     return max_valor
 #
-# print(veiculo_caro(data)
+# print(veiculo_caro(data))
+
+# 4. Todos os veículos movidos a gasolina
+
+def veiculos_gasolina(gasolina):
+    mod = "modelo"
+    comb = "combustivel"
+    tipo = [vl[mod] for vl in gasolina]
+    tipo1 = [vl[comb] for vl in gasolina]
+    for q, a in zip(tipo, tipo1):
+        print(q,a)
+        if a == "gasolina":
+            gasolina = q, a
+            return gasolina
+
+print(veiculos_gasolina(data))
+
+#     res = "combustivel"
+#     tipo = [vl[res] for vl in gasolina]
+#     maior = tipo
+#     mod_gasolina = maior.count("gasolina")
+#     return mod_gasolina
 #
-# # 4. Todos os veículos movidos a gasolina
-# def veiculos_gasolina(gasolina):
-#     for gas in gasolina:
-#         gas == "gasolina"
+# print(veiculos_gasolina(data))
