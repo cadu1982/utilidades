@@ -1,3 +1,4 @@
+
 data = [
         {
             'marca': 'fiat',
@@ -61,8 +62,28 @@ data = [
         }
     ]
 
-print(data[0], data[1])
-datq = data.update()
+
+print(data)
+for infos in data:
+    gravar = []
+    gravar.extend((infos['modelo'], infos['preco']))
+    # lista = dict(zip(gravar))
+    print(gravar)
+    # max_key = max(lista, key=lista.get)
+    # print(max_key)
+
+
+
+    # valor = "preco"
+    # valores = list([vl[valor] for vl in carro])
+    # maior = valores
+    # max_valor = max(maior)
+    # return max_valor
+
+for carro in data:
+    if carro['combustivel'] in 'gasolina':
+        resp = (f'{carro["modelo"]} ')
+        print(resp)
 
 
 
@@ -89,48 +110,55 @@ def quant_itens(itens):
     return quantidade
 
 print(quant_itens(data))
-
+#
 # 2. Veículo Mais Caro
 
 def veiculo_caro(carro):
     valor = "preco"
-    valores = [vl[valor] for vl in carro]
+    valores = list([vl[valor] for vl in carro])
     maior = valores
     max_valor = max(maior)
     return max_valor
 
 print(veiculo_caro(data))
-
-# 3. Veículo Mais barato
-
-# def veiculo_barato(carro):
-#     valor = "preco"
-#     valores = [vl[valor] for vl in carro]
-#     maior = valores
-#     max_valor = max(maior)
-#     return max_valor
 #
-# print(veiculo_caro(data))
-
+# # 3. Veículo Mais barato
+#
+# # def veiculo_barato(carro):
+# #     valor = "preco"
+# #     valores = [vl[valor] for vl in carro]
+# #     maior = valores
+# #     max_valor = max(maior)
+# #     return max_valor
+# #
+# # print(veiculo_caro(data))
+#
 # 4. Todos os veículos movidos a gasolina
 
 def veiculos_gasolina(gasolina):
-    mod = "modelo"
-    comb = "combustivel"
-    tipo = [vl[mod] for vl in gasolina]
-    tipo1 = [vl[comb] for vl in gasolina]
-    for q, a in zip(tipo, tipo1):
-        print(q,a)
-        if a == "gasolina":
-            gasolina = q, a
-            return gasolina
+    for carro in gasolina:
+        if carro['combustivel'] in 'gasolina':
+            resp = (f'{carro["modelo"]} ')
+            return resp
 
 print(veiculos_gasolina(data))
 
-#     res = "combustivel"
-#     tipo = [vl[res] for vl in gasolina]
-#     maior = tipo
-#     mod_gasolina = maior.count("gasolina")
-#     return mod_gasolina
-#
-# print(veiculos_gasolina(data))
+# # 4. Todos os veículos movidos a alcool
+
+def veiculos_alcool(alcool):
+    for carro in alcool:
+        if carro['combustivel'] in 'alcool':
+            resp = (f'{carro["modelo"]} ')
+            return resp
+
+print(veiculos_alcool(data))
+
+# 6. Todos os veículos movidos a flex
+
+def veiculos_flex(flex):
+    for carro in flex:
+        if carro['combustivel'] in 'flex':
+            resp = (f'{carro["modelo"]} ')
+            return resp
+
+print(veiculos_flex(data))

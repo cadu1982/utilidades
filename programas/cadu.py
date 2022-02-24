@@ -19,18 +19,25 @@ data = [
         }
     ]
 
-mod = "modelo"
-comb = "combustivel"
-tipo = [vl[mod] for vl in data]
-tipo1 = [vl[comb] for vl in data]
-for q, a in zip(tipo, tipo1):
-    # print(q,a)
-    if a == "gasolina":
-        print(q, a)
-# resul = tipo(zip)
-# quantos = tipo.count("gasolina")
-# print(maior)
-# print(tipo, tipo1)
+
+
+for carro in data:
+    modelo, combustivel = data.values()
+    print(modelo, combustivel)
+
+
+# mod = "modelo"
+# comb = "combustivel"
+# tipo = [vl[mod] for vl in data]
+# tipo1 = [vl[comb] for vl in data]
+# for q, a in zip(tipo, tipo1):
+#     # print(q,a)
+#     if a == "gasolina":
+#         print(q, a)
+# # resul = tipo(zip)
+# # quantos = tipo.count("gasolina")
+# # print(maior)
+# # print(tipo, tipo1)
 
 
 
@@ -78,3 +85,20 @@ for q, a in zip(tipo, tipo1):
 #
 # carro = (data[2]["preco"])
 # print(modelo, carro)
+
+# mod = "modelo"
+# comb = "combustivel"
+# tipo = [vl[mod] for vl in gasolina]
+# tipo1 = [vl[comb] for vl in gasolina]
+# for q, a in zip(tipo, tipo1):
+#     print(q,a)
+#     if a == "gasolina":
+#         gasolina = q, a
+#         return gasolina
+
+# print(data[0], data[1])
+
+# cadu = list(filter(lambda person: person['combustivel'] == 'gasolina', data))
+# respo = cadu
+# cadu = (respo[0]["modelo"], respo[1]["modelo"],respo[2]["modelo"],respo[3]["modelo"])
+# print(cadu)
