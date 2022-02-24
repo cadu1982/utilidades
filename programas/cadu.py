@@ -19,6 +19,13 @@ data = [
         }
     ]
 
+a_key = "preco"
+values_of_key = [a_dict[a_key] for a_dict in data]
+
+print(values_of_key)
+
+
+
 caro = 0
 i = 0
 modelo = (data[0]["preco"])

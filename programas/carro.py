@@ -64,6 +64,8 @@ data = [
     ]
 
 
+
+
 # 1. Quantidade de Itens
 
 def count_keys(itens):
@@ -91,16 +93,23 @@ print(quant_itens(data))
 # 2. Veículo Mais Caro
 
 def veiculo_caro(carro):
-    caro = 0
-    valor = (carro[0]["preco"])
-    for valor in carro:
-        valor > caro
-        caro = valor
-        return caro
+    valor = "preco"
+    valores = [vl[valor] for vl in carro]
+    resultado = valores.split(",")
+    maximo = (max(int(maior) for maior in resultado))
 
-print(veiculo_caro(data)
+print(veiculo_caro(data))
 
-# 4. Todos os veículos movidos a gasolina
-def veiculos_gasolina(gasolina):
-    for gas in gasolina:
-        gas == "gasolina"
+#     caro = 0
+#     valor = (carro[0]["preco"])
+#     for valor in carro:
+#         valor > caro
+#         caro = valor
+#         return caro
+#
+# print(veiculo_caro(data)
+#
+# # 4. Todos os veículos movidos a gasolina
+# def veiculos_gasolina(gasolina):
+#     for gas in gasolina:
+#         gas == "gasolina"
