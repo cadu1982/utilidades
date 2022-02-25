@@ -66,8 +66,16 @@ valores = [vl["preco"] for vl in data]
 lista = {}
 lista = dict(zip(modelos, valores))
 print(lista)
-caro = max(lista, key = lista.get)
-print(caro)
+for menor in sorted(lista, key = lista.get):
+    print(menor)
+
+
+
+# for k, v in lista.items():
+#     if v == "gasolina":
+#         print(k,v)
+# caro = max(lista, key = lista.get)
+# print(caro)
 
 
 # for i,j in zip(modelos, valores):
