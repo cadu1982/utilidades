@@ -61,18 +61,34 @@ data = [
         }
     ]
 
-for infos in data:
-    valor = "preco"
-    gravar = []
-    gravar.append((infos['modelo'], infos['preco']))
-    lista = dict(gravar)
-    print(lista)
-    valores = [vl[valor] for vl in data]
-    maior = valores
-    print(maior)
-    max_valor = max(maior)
-    print(maior)
-    # if max_maior = 
+modelos = [vm["modelo"] for vm in data]
+valores = [vl["preco"] for vl in data]
+lista = {}
+lista = dict(zip(modelos, valores))
+print(lista)
+caro = max(lista, key = lista.get)
+print(caro)
+
+
+# for i,j in zip(modelos, valores):
+#     lista[i] = j
+#     print(lista)
+#     caro = max(lista, key = lista.get)
+#     print(caro)
+
+
+# for infos in data:
+    # gravar = []
+    # gravar.append((infos['modelo'], infos['preco']))
+    # lista = dict(gravar)
+    # print(lista)
+
+# print(valores)
+# print(valor)
+    # print(valores, valor)
+    # max_valor = max(maior)
+    # print(maior)
+    # if max_maior =
 
 
 
@@ -137,12 +153,12 @@ for infos in data:
 #
 # # 3. Veículo Mais barato
 #
-def veiculo_barato(carro):
-    valor = "preco"
-    valores = [vl[valor] for vl in carro]
-    maior = valores
-    print(maior)
-    max_valor = max(maior)
-    return max_valor
-
-print(veiculo_barato(data))
+# def veiculo_barato(carro):
+#     valor = "preco"
+#     valores = [vl[valor] for vl in carro]
+#     maior = valores
+#     print(maior)
+#     max_valor = max(maior)
+#     return max_valor
+#
+# print(veiculo_barato(data))

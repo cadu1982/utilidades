@@ -86,14 +86,13 @@ def quant_itens(itens):
 
 # #2. Veículo Mais Caro
 #
-# def veiculo_caro(carro):
-#     valor = "preco"
-#     valores = list([vl[valor] for vl in carro])
-#     maior = valores
-#     max_valor = max(maior)
-#     return max_valor
-#
-# print(veiculo_caro(data))
+def veiculo_caro(carro):
+    modelos = [vm["modelo"] for vm in carro]
+    valores = [vl["preco"] for vl in carro]
+    lista = {}
+    lista = dict(zip(modelos, valores))
+    caro = max(lista, key = lista.get)
+    return caro
 
 # #3. Veículo Mais barato
 #
@@ -137,26 +136,25 @@ def veiculos_alcool(alcool):
 
 def veiculos_flex(flex):
         f = "flex"
-        gravar = []
-        gravar.append((infos['modelo'], infos['combustivel']))
-        lista = dict(gravar)
-        for k,v in lista.items():
-            if v == f:
-                lista_flex = k
-                return lista_flex
+        for infos in flex:
+            gravar = []
+            gravar.append((infos['modelo'], infos['combustivel']))
+            lista = dict(gravar)
+            for k,v in lista.items():
+                if v == f:
+                    lista_flex = k
+                    return lista_flex
 
-
-____name____ == "____main____"
-
-quantidade = quantidade_itens(data)
-print(quantidade)
-veiculo_caro = veiculos_caro(data)
-print(veiculo_caro)
-veiculo_barato = veiculo_barato(data)
-print(veiculo_barato)
-veiculos_gasolina = veiculos_gasolina(data)
-print(veiculos_gasolina)
-veiculos_alcool = veiculos_alcool(data)
-print(veiculos_alcool)
-veiculos_flex = veiculos_flex(data)
-print(veiculos_flex)
+if __name__ == "__main__":
+    quantidade = quantidade_itens(data)
+    print(quantidade)
+    veiculo_caro = veiculo_caro(data)
+    print(veiculo_caro)
+    # veiculo_barato = veiculo_barato(data)
+    # print(veiculo_barato)
+    veiculos_gasolina = veiculos_gasolina(data)
+    print(veiculos_gasolina)
+    veiculos_alcool = veiculos_alcool(data)
+    print(veiculos_alcool)
+    veiculos_flex = veiculos_flex(data)
+    print(veiculos_flex)
