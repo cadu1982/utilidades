@@ -63,64 +63,68 @@ data = [
     ]
 
 
-print(data)
-for infos in data:
-    gravar = []
-    gravar.extend((infos['modelo'], infos['preco']))
-    # lista = dict(zip(gravar))
-    print(gravar)
-    # max_key = max(lista, key=lista.get)
-    # print(max_key)
 
 
+# print(data)
+# for infos in data:
+#     gravar = []
+#     gravar.append((infos['modelo'], infos['combustivel']))
+#     lista = dict(gravar)
+#     x = "gasolina"
+#     for k,v in lista.items():
+#         if v == x:
+#             print(f'{k}')
 
-    # valor = "preco"
-    # valores = list([vl[valor] for vl in carro])
-    # maior = valores
-    # max_valor = max(maior)
+# for infos in data:
+#     gravar = []
+#     gravar.append((infos['modelo'], infos['combustivel']))
+#     lista = dict(gravar)
+#     for k,v in lista.items():
+#         if k, v == "gasolina"
+#         print(f' {k}:{v}')
     # return max_valor
 
-for carro in data:
-    if carro['combustivel'] in 'gasolina':
-        resp = (f'{carro["modelo"]} ')
-        print(resp)
+# for carro in data:
+#     if carro['combustivel'] in 'gasolina':
+#         resp = (f'{carro["modelo"]} ')
+#         print(resp)
 
 
 
 # 1. Quantidade de Itens
 
-def count_keys(itens):
-    quantidade = 0
-    for item in enumerate(itens):
-        quantidade += 1
-    return quantidade
-
-print(count_keys(data))
-
-def quantidade_itens(itens):
-    quantidade = len(itens)
-    return quantidade
-
-print(quantidade_itens(data))
-
-def quant_itens(itens):
-    quantidade = 0
-    for item in itens:
-        quantidade += 1
-    return quantidade
-
-print(quant_itens(data))
+# def count_keys(itens):
+#     quantidade = 0
+#     for item in enumerate(itens):
+#         quantidade += 1
+#     return quantidade
+#
+# print(count_keys(data))
+#
+# def quantidade_itens(itens):
+#     quantidade = len(itens)
+#     return quantidade
+#
+# print(quantidade_itens(data))
+#
+# def quant_itens(itens):
+#     quantidade = 0
+#     for item in itens:
+#         quantidade += 1
+#     return quantidade
+#
+# print(quant_itens(data))
 #
 # 2. Veículo Mais Caro
 
-def veiculo_caro(carro):
-    valor = "preco"
-    valores = list([vl[valor] for vl in carro])
-    maior = valores
-    max_valor = max(maior)
-    return max_valor
-
-print(veiculo_caro(data))
+# def veiculo_caro(carro):
+#     valor = "preco"
+#     valores = list([vl[valor] for vl in carro])
+#     maior = valores
+#     max_valor = max(maior)
+#     return max_valor
+#
+# print(veiculo_caro(data))
 #
 # # 3. Veículo Mais barato
 #
@@ -136,29 +140,45 @@ print(veiculo_caro(data))
 # 4. Todos os veículos movidos a gasolina
 
 def veiculos_gasolina(gasolina):
-    for carro in gasolina:
-        if carro['combustivel'] in 'gasolina':
-            resp = (f'{carro["modelo"]} ')
-            return resp
+    for infos in gasolina:
+        gravar = []
+        gravar.append((infos['modelo'], infos['combustivel']))
+        lista = dict(gravar)
+        g = "gasolina"
+        for k,v in lista.items():
+            if v == g:
+                lista_gasolina = k
 
 print(veiculos_gasolina(data))
 
-# # 4. Todos os veículos movidos a alcool
+# 4. Todos os veículos movidos a alcool
 
 def veiculos_alcool(alcool):
-    for carro in alcool:
-        if carro['combustivel'] in 'alcool':
-            resp = (f'{carro["modelo"]} ')
-            return resp
+    for infos in alcool:
+        gravar = []
+        gravar.append((infos['modelo'], infos['combustivel']))
+        lista = dict(gravar)
+        a = "alcool"
+        for k,v in lista.items():
+            if v == a:
+                lista_alcool = k
 
 print(veiculos_alcool(data))
 
 # 6. Todos os veículos movidos a flex
 
 def veiculos_flex(flex):
-    for carro in flex:
-        if carro['combustivel'] in 'flex':
-            resp = (f'{carro["modelo"]} ')
-            return resp
+    for infos in flex:
+        gravar = []
+        gravar.append((infos['modelo'], infos['combustivel']))
+        lista = dict(gravar)
+        f = "flex"
+        for k,v in lista.items():
+            if v == f:
+                lista_flex = k
+
 
 print(veiculos_flex(data))
+
+
+____name____ == "____main____"
