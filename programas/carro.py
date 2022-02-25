@@ -147,3 +147,16 @@ def veiculos_flex(flex):
 
 
 ____name____ == "____main____"
+
+quantidade = quantidade_itens(data)
+print(quantidade)
+veiculo_caro = veiculos_caro(data)
+print(veiculo_caro)
+veiculo_barato = veiculo_barato(data)
+print(veiculo_barato)
+veiculos_gasolina = veiculos_gasolina(data)
+print(veiculos_gasolina)
+veiculos_alcool = veiculos_alcool(data)
+print(veiculos_alcool)
+veiculos_flex = veiculos_flex(data)
+print(veiculos_flex)

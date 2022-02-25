@@ -61,30 +61,62 @@ data = [
         }
     ]
 
+for infos in data:
+    valor = "preco"
+    gravar = []
+    gravar.append((infos['modelo'], infos['preco']))
+    lista = dict(gravar)
+    print(lista)
+    valores = [vl[valor] for vl in data]
+    maior = valores
+    print(maior)
+    max_valor = max(maior)
+    print(maior)
+    # if max_maior = 
 
+
+
+        # for i in range (len(lista)):
+        #     atual = v[i]
+        #     j = i - 1;
+        # while (j >=0) and (atual < v[j]):
+        #     v[j +1] = v[j]
+        #     j = j -1
+        #     v[j + 1] = atual
+        #     i = 1
+        # print(modelo, valor)
+
+
+
+
+
+
+
+# gravar = dict(data[0]), (data[1])
+# print(gravar)
 # print(data)
-# for infos in data:
-#     gravar = []
-#     gravar.append((infos['modelo'], infos['combustivel']))
-#     lista = dict(gravar)
-#     x = "gasolina"
-#     for k,v in lista.items():
-#         if v == x:
-#             print(f'{k}')
 
-# for infos in data:
-#     gravar = []
-#     gravar.append((infos['modelo'], infos['combustivel']))
-#     lista = dict(gravar)
-#     for k,v in lista.items():
-#         if k, v == "gasolina"
-#         print(f' {k}:{v}')
-    # return max_valor
-
+# for carro in gravar:
+#     modelo, combustivel = gravar.values()
+#     print(modelo, combustivel)
 # for carro in data:
-#     if carro['combustivel'] in 'gasolina':
-#         resp = (f'{carro["modelo"]} ')
-#         print(resp)
+#     modelo, combustivel = data.values_of_key()
+#     print(modelo, combustivel)
+
+# for infos in data:
+#     gravar = []
+#     gravar.append((infos['modelo'], infos['preco']))
+#     lista = dict(gravar)
+#     # print(lista)
+#     lista = d.items()
+#     for v in lista.items():
+#         print(v[0])
+
+
+
+
+
+
 
 
 
@@ -92,69 +124,25 @@ data = [
 # 2. Veículo Mais Caro
 
 # def veiculo_caro(carro):
-#     valor = "preco"
-#     valores = list([vl[valor] for vl in carro])
+#     valores = list([vl[valor])
 #     maior = valores
-#     max_valor = max(maior)
+#     for vl in carro:
+#         max_valor = max(maior)
 #     return max_valor
-#
+
+
+
+
 # print(veiculo_caro(data))
 #
 # # 3. Veículo Mais barato
 #
-# # def veiculo_barato(carro):
-# #     valor = "preco"
-# #     valores = [vl[valor] for vl in carro]
-# #     maior = valores
-# #     max_valor = max(maior)
-# #     return max_valor
-# #
-# # print(veiculo_caro(data))
-#
-# 4. Todos os veículos movidos a gasolina
+def veiculo_barato(carro):
+    valor = "preco"
+    valores = [vl[valor] for vl in carro]
+    maior = valores
+    print(maior)
+    max_valor = max(maior)
+    return max_valor
 
-def veiculos_gasolina(gasolina):
-    g = "gasolina"
-    for infos in gasolina:
-        gravar = []
-        gravar.append((infos['modelo'], infos['combustivel']))
-        lista = dict(gravar)
-        for k,v in lista.items():
-            if v == g:
-                lista_gasolina = k
-
-print(veiculos_gasolina(data))
-
-# 4. Todos os veículos movidos a alcool
-
-def veiculos_alcool(alcool):
-    a = "alcool"
-    for infos in alcool:
-        gravar = []
-        gravar.append((infos['modelo'], infos['combustivel']))
-        lista = dict(gravar)
-        for k,v in lista.items():
-            if v == a:
-                lista_alcool = k
-                return lista_alcool
-
-print(veiculos_alcool(data))
-
-# 6. Todos os veículos movidos a flex
-
-def veiculos_flex(flex):
-    f = "flex"
-    for infos in flex:
-        gravar = []
-        gravar.append((infos['modelo'], infos['combustivel']))
-        lista = dict(gravar)
-        for k,v in lista.items():
-            if v == f:
-                lista_flex = k
-                return lista_flex
-
-
-print(veiculos_flex(data))
-
-
-#____name____ == "____main____"
+print(veiculo_barato(data))
