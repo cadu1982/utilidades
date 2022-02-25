@@ -16,14 +16,71 @@ data = [
             'modelo': 'punto',
             'preco': 15000,
             'combustivel': 'flex'
+        },
+        {
+            'marca': 'vw',
+            'modelo': 'fusca',
+            'preco': 11000,
+            'combustivel': 'gasolina'
+        },
+        {
+            'marca': 'vw',
+            'modelo': 'gol',
+            'preco': 13000,
+            'combustivel': 'alcool'
+        },
+        {
+            'marca': 'vw',
+            'modelo': 'jetta',
+            'preco': 25000,
+            'combustivel': 'flex'
+        },
+        {
+            'marca': 'gm',
+            'modelo': 'celta',
+            'preco': 8000,
+            'combustivel': 'gasolina'
+        },
+        {
+            'marca': 'gm',
+            'modelo': 'astra',
+            'preco': 17000,
+            'combustivel': 'alcool'
+        },
+        {
+            'marca': 'gm',
+            'modelo': 'vectra',
+            'preco': 22000,
+            'combustivel': 'gasolina'
+        },
+        {
+            'marca': 'ford',
+            'modelo': 'fusion',
+            'preco': 29000,
+            'combustivel': 'flex'
         }
     ]
+for infos in data:
+    gravar = []
+    gravar.append((infos['modelo'], infos['preco']))
+    lista = dict(gravar)
+    # print(lista)
+    for k,v in lista.items():
+        print(k,v)
+    #     if c == 0
+    #         maior = menor = c
+    #     else:
+    #         if c
+    #     v > x:
+    #         x = v
+    #     if  v < x
 
 
 
-for carro in data:
-    modelo, combustivel = data.values()
-    print(modelo, combustivel)
+
+# for carro in data:
+#     modelo, combustivel = data.values()
+#     print(modelo, combustivel)
 
 
 # mod = "modelo"
