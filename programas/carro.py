@@ -97,8 +97,8 @@ def veiculo_caro(carro):
 # #3. Veículo Mais barato
 #
 def veiculo_barato(carro):
-    modelos = [vm["modelo"] for vm in data]
-    valores = [vl["preco"] for vl in data]
+    modelos = [vm["modelo"] for vm in carro]
+    valores = [vl["preco"] for vl in carro]
     lista = {}
     lista = dict(zip(modelos, valores))
     for menor in sorted(lista, key = lista.get):
@@ -109,16 +109,14 @@ def veiculo_barato(carro):
 # 4. Todos os veículos movidos a gasolina
 
 def veiculos_gasolina(gasolina):
-    # modelos = [vm["modelo"] for vm in data]
-    # valores = [vl["combustivel"] for vl in data]
-    # lista = {}
-    # lista = dict(zip(modelos, valores))
-    # for mod, comb in lista.items():
-    #     if comb == "gasolina":
-    #         print(mod)
-    #         sao = list(mod)
-    #         return mod
-
+    modelos = [vm["modelo"] for vm in gasolina]
+    valores = [vl["combustivel"] for vl in gasolina]
+    lista = {}
+    lista = dict(zip(modelos, valores))
+    for mod, comb in lista.items():
+        if comb == "gasolina":
+            sao = list(mod)
+            return mod
 
     for infos in gasolina:
         gravar = []
@@ -126,8 +124,8 @@ def veiculos_gasolina(gasolina):
         lista = dict(gravar)
         for k,v in lista.items():
             if v == "gasolina":
-                lista_gasolina = k
-                return k
+                lista_gasolina = list(k)
+                return list(k)
 
 
 # 5. Todos os veículos movidos a alcool
@@ -152,7 +150,7 @@ def veiculos_flex(flex):
             for k,v in lista.items():
                 if v == "flex":
                     lista_flex = k
-                    return lista
+                    return lista_flex
 
 if __name__ == "__main__":
     quantidade = quantidade_itens(data)
@@ -160,7 +158,7 @@ if __name__ == "__main__":
     veiculo_caro = veiculo_caro(data)
     print("O veiculo de maior valor é o: ", veiculo_caro)
     veiculo_barato = veiculo_barato(data)
-    print("O veiculo de menor valor é: ", veiculo_barato)
+    print("O veiculo de menor valor é o: ", veiculo_barato)
     veiculos_gasolina = veiculos_gasolina(data)
     print("Os veiculos movidos a gasolina são: ", veiculos_gasolina)
     veiculos_alcool = veiculos_alcool(data)

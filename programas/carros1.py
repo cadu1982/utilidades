@@ -62,12 +62,13 @@ data = [
     ]
 
 modelos = [vm["modelo"] for vm in data]
-valores = [vl["preco"] for vl in data]
+valores = [vl["combustivel"] for vl in data]
 lista = {}
 lista = dict(zip(modelos, valores))
-print(lista)
-for menor in sorted(lista, key = lista.get):
-    print(menor)
+for v, i in lista.items():
+    if i == "gasolina":
+        carros = list(v)
+        print(carros)
 
 
 
