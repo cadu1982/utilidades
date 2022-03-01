@@ -118,14 +118,14 @@ def veiculos_gasolina(gasolina):
             sao = list(mod)
             return mod
 
-    for infos in gasolina:
-        gravar = []
-        gravar.append((infos['modelo'], infos['combustivel']))
-        lista = dict(gravar)
-        for k,v in lista.items():
-            if v == "gasolina":
-                lista_gasolina = list(k)
-                return list(k)
+    # for infos in gasolina:
+    #     gravar = []
+    #     gravar.append((infos['modelo'], infos['combustivel']))
+    #     lista = dict(gravar)
+    #     for k,v in lista.items():
+    #         if v == "gasolina":
+    #             lista_gasolina = list(k)
+    #             return list(k)
 
 
 # 5. Todos os veículos movidos a alcool
