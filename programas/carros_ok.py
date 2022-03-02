@@ -101,8 +101,7 @@ def veiculo_barato(carro):
     lista = {}
     lista = dict(zip(modelos, valores))
     for menor in sorted(lista, key = lista.get):
-        carro = menor
-        return carro
+        return menor
 
 # 4. Todos os veículos movidos a gasolina
 
