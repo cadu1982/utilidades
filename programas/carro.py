@@ -108,6 +108,17 @@ def veiculo_barato(carro):
 
 # 4. Todos os veículos movidos a gasolina
 
+def filtrar_por_gasolina(carros):
+    modelos_a_gasolina = []
+    for carro in carros:
+        if carro['combustivel'] == 'gasolina':
+            modelos_a_gasolina.append(carro['modelo'])
+    return modelos_a_gasolina
+
+# def filtrar_por_gasolina(carros):
+#     return [carro['modelo'] for carro in carros if carro['combustivel'] == 'gasolina']
+
+
 # def veiculos_gasolina(gasolina):
 #     modelos = [vm["modelo"] for vm in gasolina]
 #     valores = [vl["combustivel"] for vl in gasolina]
@@ -128,12 +139,12 @@ def veiculo_barato(carro):
 #                 lista_gasolina = k
 #                 return k
 #
-def veiculos_gasolina2(gasolina2):
-    for carros in gasolina2:
-        if carros["combustivel"] == 'gasolina':
-            mod_gasolina = carros["modelo"]
-            print(mod_gasolina)
-            return mod_gasolina
+# def veiculos_gasolina2(gasolina2):
+#     for carros in gasolina2:
+#         if carros["combustivel"] == 'gasolina':
+#             mod_gasolina = carros["modelo"]
+#             print(mod_gasolina)
+#             return mod_gasolina
 
 
 # 5. Todos os veículos movidos a alcool

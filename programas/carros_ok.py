@@ -86,15 +86,15 @@ def quant_itens(itens):
 # #2. Veículo Mais Caro
 #
 def veiculo_caro(carro):
-    modelos = [vm["modelo"] for vm in carro]
-    valores = [vl["preco"] for vl in carro]
+    modelos_c = [vm["modelo"] for vm in carro]
+    valores_c = [vl["preco"] for vl in carro]
     lista = {}
-    lista = dict(zip(modelos, valores))
+    lista = dict(zip(modelos_c, valores_c))
     caro = max(lista, key = lista.get)
     return caro
 
 # #3. Veículo Mais barato
-#
+
 def veiculo_barato(carro):
     modelos = [vm["modelo"] for vm in carro]
     valores = [vl["preco"] for vl in carro]
@@ -102,8 +102,7 @@ def veiculo_barato(carro):
     lista = dict(zip(modelos, valores))
     for menor in sorted(lista, key = lista.get):
         carro = menor
-    return carro
-
+        return carro
 
 # 4. Todos os veículos movidos a gasolina
 
