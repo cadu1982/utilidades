@@ -108,24 +108,31 @@ def veiculo_barato(carro):
 
 # 4. Todos os veículos movidos a gasolina
 
-def veiculos_gasolina(gasolina):
-    modelos = [vm["modelo"] for vm in gasolina]
-    valores = [vl["combustivel"] for vl in gasolina]
-    lista = {}
-    lista = dict(zip(modelos, valores))
-    for mod, comb in lista.items():
-        if comb == "gasolina":
-            sao = list(mod)
-            return mod
+# def veiculos_gasolina(gasolina):
+#     modelos = [vm["modelo"] for vm in gasolina]
+#     valores = [vl["combustivel"] for vl in gasolina]
+#     lista = {}
+#     lista = dict(zip(modelos, valores))
+#     for mod, comb in lista.items():
+#         if comb == "gasolina":
+#             sao = list(mod)
+#             return mod
 
-    # for infos in gasolina:
-    #     gravar = []
-    #     gravar.append((infos['modelo'], infos['combustivel']))
-    #     lista = dict(gravar)
-    #     for k,v in lista.items():
-    #         if v == "gasolina":
-    #             lista_gasolina = list(k)
-    #             return list(k)
+# def veiculos_gasolina1(gasolina1):
+#     for infos in gasolina1:
+#         gravar = []
+#         gravar.append((infos['modelo'], infos['combustivel']))
+#         lista = dict(gravar)
+#         for k,v in lista.items():
+#             if v == "gasolina":
+#                 lista_gasolina = k
+#                 return k
+#
+def veiculos_gasolina2(gasolina2):
+    for carros in gasolina2:
+        if carros["combustivel"] == 'gasolina':
+            mod_gasolina = carros["modelo"]
+            return mod_gasolina
 
 
 # 5. Todos os veículos movidos a alcool
@@ -159,8 +166,12 @@ if __name__ == "__main__":
     print("O veiculo de maior valor é o: ", veiculo_caro)
     veiculo_barato = veiculo_barato(data)
     print("O veiculo de menor valor é o: ", veiculo_barato)
-    veiculos_gasolina = veiculos_gasolina(data)
-    print("Os veiculos movidos a gasolina são: ", veiculos_gasolina)
+    # veiculos_gasolina = veiculos_gasolina(data)
+    # print("Os veiculos movidos a gasolina são: ", veiculos_gasolina)
+    # veiculos_gasolina1 = veiculos_gasolina1(data)
+    # print("Os veiculos movidos a gasolina1 são: ", veiculos_gasolina1)
+    veiculos_gasolina2 = veiculos_gasolina2(data)
+    print("Os veiculos movidos a gasolina2 são: ", veiculos_gasolina2)
     veiculos_alcool = veiculos_alcool(data)
     print("Os veiculos movidos a alcool são: ", veiculos_alcool)
     veiculos_flex = veiculos_flex(data)

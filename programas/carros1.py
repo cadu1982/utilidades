@@ -61,14 +61,69 @@ data = [
         }
     ]
 
-modelos = [vm["modelo"] for vm in data]
-valores = [vl["combustivel"] for vl in data]
+modelos = [vm["modelo"] for vm in gasolina]
+valores = [vl["combustivel"] for vl in gasolina]
 lista = {}
 lista = dict(zip(modelos, valores))
-for v, i in lista.items():
-    if i == "gasolina":
-        carros = list(v)
-        print(carros)
+print(lista)
+for mod, comb in lista.items():
+    if comb == "gasolina":
+        sao = mod
+        print(sao)
+
+
+def veiculos_gasolina(gasolina):
+    modelos = [vm["modelo"] for vm in gasolina]
+    valores = [vl["combustivel"] for vl in gasolina]
+    lista = {}
+    lista = dict(zip(modelos, valores))
+    for mod, comb in lista.items():
+        if comb == "gasolina":
+            sao = list(mod)
+            return mod
+
+def veiculos_gaso(gasolina):
+    for infos in gasolina:
+        print(infos)
+        gravar = []
+        gravar.append((infos['modelo'], infos['combustivel']))
+        lista = dict(gravar)
+        for k,v in lista.items():
+            if v == "gasolina":
+                return k
+
+# def veiculos_gaso(gasolina):
+#     for k, v in gasolina:
+#         gravar = []
+#         gravar.append((infos['modelo'], infos['combustivel']))
+#         lista = dict(gravar)
+#         print(lista)
+#         for k,v in lista.items():
+#             if v == "gasolina":
+#                 return k
+
+if __name__ == "__main__":
+    veiculos_gasolina = veiculos_gasolina(data)
+    print(f"Os veiculos movidos a gasolina são: {veiculos_gasolina}")
+    veiculos_alcool = veiculos_gaso(data)
+    print("Os veiculos movidos a gasolina são: ", veiculos_alcool)
+
+
+
+
+
+
+
+
+
+# modelos = [vm["modelo"] for vm in data]
+# valores = [vl["combustivel"] for vl in data]
+# lista = {}
+# lista = dict(zip(modelos, valores))
+# for v, i in lista.items():
+#     if i == "gasolina":
+#         carros = list(v)
+#         print(carros)
 
 
 
