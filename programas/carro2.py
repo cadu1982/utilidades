@@ -1,4 +1,4 @@
-data = [
+carros = [
         {
             'marca': 'fiat',
             'modelo': 'uno',
@@ -61,15 +61,64 @@ data = [
         }
     ]
 
-def gasolina(modelo):
-    for carros in modelo:
-        if carros["combustivel"] == 'gasolina':
-            camila = carros["modelo"]
-            print(camila)
-        return camila
 
-quantidade = gasolina(data)
-print("A quantidade de itens da lista é: ", quantidade)
+def filtrar_por_gasolina(carros):
+    modelos_a_gasolina = []
+    for carro in carros:
+        if carro['combustivel'] == 'gasolina':
+            modelos_a_gasolina.append(carro['modelo'])
+    return modelos_a_gasolina
+
+modelos_a_gasolina = filtrar_por_gasolina(carros)
+print(modelos_a_gasolina)
+
+
+
+
+# def filtrar_por_gasolina(data):
+#     modelos_a_gasolina = []
+#     for carro in data:
+#         if carro['combustivel'] == 'gasolina':
+#             modelos_a_gasolina.append(carro['modelo'])
+#             return modelos_a_gasolina
+#
+# modelos_a_gasolina = filtrar_por_gasolina(data)
+# print(modelos_a_gasolina)
+#
+# # for carros in data:
+#     if carros["combustivel"] == 'gasolina':
+#     mod_carros = carros["modelo"]
+#     print(mod_carros)
+#
+# def gasolina(modelo):
+#     comb = "gasolina"
+#     for i in range(0, len(modelo)):
+#         gaso = modelo[i]
+#         if comb == gaso["combustivel"]:
+#             modelos = gaso["modelos"]
+#             print(modelos)
+#
+# quantidade = gasolina(data)
+# print("A quantidade de itens da lista é: ", quantidade)
+
+
+
+
+    # for carro in modelo:
+    #     mod = carro["modelo"]
+    #     comb = carro["combustivel"]
+    #     print(mod, comb)
+
+
+
+
+
+        # if carro["combustivel"] == "gasolina":
+        #     modelo = carro["modelo"]
+        #     print(modelo)
+        # return modelo
+
+
 
 # modelos = [vm["modelo"] for vm in informacao]
 # valores = [vl["combustivel"] for vl in informacao]
